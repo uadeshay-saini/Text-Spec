@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-
+import TextSpec from './Text-Spec.png'
 export default function Navbar(props) {
   // const[backgroundColor1, setbackgroundColor] = useState({backgroundColor : "white", color: "black"})
   const[color, setColor] = useState({backgroundColor : "grey", color: "black"})
@@ -29,6 +29,9 @@ export default function Navbar(props) {
   return (
     <div >  <nav className= "navbar navbar-expand-lg " style={color}>
     <div className="container-fluid" >
+      <div className=''>
+      <img className='img-fluid' alt='' src={TextSpec}></img>
+      </div>
       <Link className="navbar-brand" style={color} to="/">{props.title}</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -43,10 +46,10 @@ export default function Navbar(props) {
           </li>
           
         </ul>
-        <form className="d-flex" role="search">
+        {/* <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        </form> */}
         <div className="d-flex" style={color} >
           <div className=" rounded mx-2" onClick={modeSelect1} style={{height: "30px", width : "30px", backgroundColor: '#790252'}}>
           </div>
