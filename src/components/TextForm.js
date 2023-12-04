@@ -14,7 +14,17 @@ export default function TextForm(props) {
     const handleChange = (event) =>{
         setText(event.target.value)
    };
-
+   const handleClearClick = ()=>{ 
+     let newText = '';
+     setText(newText);
+ }
+   const handleExtraSpaces = () => {
+     let newText = text.split(/[ ]+/);
+     setText(newText.join(" "));
+ }
+ const handleCopy = () => {
+     navigator.clipboard.writeText(text); 
+ }
     const[text, setText] = useState("");
 
  //   const[backgroundColor3, setbackgroundColor3] = useState({backgroundColor : "white", color: "black"})
@@ -32,6 +42,11 @@ export default function TextForm(props) {
         <textarea style={props.backgroundColor1} className="form-control" id="textValue" value={text} onChange={handleChange} rows="10"></textarea>
         <button className='btn btn-outline-success my-3' onClick={handleUpperCase}>To Upper Case</button>
         <button className='btn btn-outline-success my-3 mx-3' onClick={handleLowerCase}>To Lower Case</button>
+        <button className='btn btn-outline-success my-3 mx-3' onClick={handleExtraSpaces}>To Lower Case</button>
+        <button className='btn btn-outline-success my-3 mx-3' onClick={handleCopy}>To Lower Case</button>
+        <button className='btn btn-outline-success my-3 mx-3' onClick={handleClearClick}>To Lower Case</button>
+
+    
     </div>
   </div>
   )

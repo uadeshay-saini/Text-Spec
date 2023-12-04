@@ -15,7 +15,7 @@ function App() {
   {document.body.style.backgroundColor = backgroundColor1.backgroundColor}
 
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/Text-Spec" >
     <Navbar title="Text-Specs" about="About Us" mode={mode} setMode={setMode} backgroundColor1={backgroundColor1} setbackgroundColor={setbackgroundColor}/>
   
       <TextForm mode={mode} setMode={setMode} backgroundColor1={backgroundColor1}/>
